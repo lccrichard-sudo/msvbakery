@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ms. V Bakery｜手作甜點</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Noto+Serif+TC:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero Slideshow -->
+  <header class="hero">
+    <div class="slideshow">
+      <div class="slide active"><img src="images/hero1.jpg" alt=""></div>
+      <div class="slide"><img src="images/hero2.jpg" alt=""></div>
+      <div class="slide"><img src="images/hero3.jpg" alt=""></div>
+      <div class="slide"><img src="images/hero4.jpg" alt=""></div>
+      <div class="slide"><img src="images/hero5.jpg" alt=""></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">handmade with love</p>
+      <h1 class="hero-title">Ms. V Bakery</h1>
+      <p class="hero-tagline">每一口都是用心製作的幸福滋味</p>
+      <a href="#products" class="btn">查看商品</a>
+    </div>
+    <button class="slide-arrow prev" onclick="moveSlide(-1)">&#8592;</button>
+    <button class="slide-arrow next" onclick="moveSlide(1)">&#8594;</button>
+    <div class="slide-dots" id="dots"></div>
+  </header>
+
+  <script>
+    let cur = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dotsEl = document.getElementById('dots');
+    slides.forEach((_, i) => {
+      const d = document.createElement('span');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => goTo(i);
+      dotsEl.appendChild(d);
+    });
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+    }
+    const dots = document.querySelectorAll('.dot');
+    function moveSlide(d) { goTo(cur + d); }
+    setInterval(() => moveSlide(1), 4000);
+  </script>
+
+  <!-- Products -->
+  <section id="products" class="products-section">
+    <h2 class="section-title">本店商品</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/brownie.jpg" alt="脆皮胡桃布朗尼">
+        </div>
+        <div class="product-info">
+          <h3>脆皮胡桃布朗尼</h3>
+          <p class="product-en">Chocolate Brownie</p>
+          <p class="product-desc">使用美國特級苦甜深黑巧克力，口感濃郁香純。品嚐前用氣炸鍋熱一下口感更好，也可加一球冰淇淋。</p>
+          <div class="price-list">
+            <span>五片一盒 <strong>$350</strong></span>
+            <span>十片一盒 <strong>$600</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/pineapple.jpg" alt="鳳梨酥">
+        </div>
+        <div class="product-info">
+          <h3>鳳梨酥</h3>
+          <p class="product-en">Pineapple Cake</p>
+          <p class="product-desc">使用金鑽鳳梨，口感酸酸甜甜，外酥內軟，一口接一口。</p>
+          <div class="price-list">
+            <span>五個一盒 <strong>$300</strong></span>
+            <span>十個一盒 <strong>$600</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/cheesecake.jpg" alt="重乳酪蛋糕">
+        </div>
+        <div class="product-info">
+          <h3>重乳酪蛋糕</h3>
+          <p class="product-en">Cheesecake</p>
+          <p class="product-desc">使用美國卡夫奶油乳酪製作，口感香醇綿密。</p>
+          <div class="price-list">
+            <span>六吋一條 <strong>$350</strong></span>
+            <span>兩條 <strong>$680</strong></span>
+            <span>三吋一個（至少四個）<strong>$180</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/nougat.jpg" alt="蔓越莓胡桃牛軋糖">
+        </div>
+        <div class="product-info">
+          <h3>蔓越莓胡桃牛軋糖</h3>
+          <p class="product-en">Cranberry Walnut Nougat</p>
+          <p class="product-desc">使用棉花糖熬製而成，口感軟Q，老人小孩都愛吃。</p>
+          <div class="price-list">
+            <span>十個一包 <strong>$150</strong></span>
+            <span>二十個一包 <strong>$300</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/gingerbread.jpg" alt="美式薑餅乾">
+        </div>
+        <div class="product-info">
+          <h3>美式薑餅乾</h3>
+          <p class="product-en">Gingerbread Cookies</p>
+          <p class="product-desc">使用肉桂、丁香、豆蔻、薑黃製作，香料濃郁非常順口。</p>
+          <div class="price-list">
+            <span>十片一包 <strong>$120</strong></span>
+            <span>二十片一包 <strong>$240</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <h2 class="section-title light">聯絡我們</h2>
+      <p class="contact-desc">有任何訂購問題，歡迎透過 LINE 與我們聯繫！</p>
+      <div class="contact-line">
+        <img src="images/line_qr.png" alt="LINE QR Code" class="line-qr">
+        <p class="line-scan">掃描加入 LINE 訂購</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Ms. V Bakery｜All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
