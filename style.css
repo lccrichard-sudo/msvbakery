@@ -242,6 +242,7 @@ body {
   margin-bottom: 2.5rem;
   font-size: 2rem;
   line-height: 1.7;
+  white-space: nowrap;
 }
 
 .contact-line {
