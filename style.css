@@ -229,11 +229,14 @@ body {
 .contact-section {
   background: var(--brown);
   padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-inner {
-  max-width: 500px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
