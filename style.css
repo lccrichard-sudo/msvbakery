@@ -131,7 +131,7 @@ body {
   color: var(--cream);
   text-decoration: none;
   border-radius: 50px;
-  font-size: 0.95rem;
+  font-size: 1.9rem;
   letter-spacing: 0.1em;
   transition: background 0.2s, transform 0.2s;
 }
